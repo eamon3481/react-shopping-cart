@@ -7,6 +7,10 @@
       "DOM.Iterable",
       "ESNext"
     ],
+    "jsxImportSource": "@emotion/react",
+    "types": [
+      "@emotion/react/types/css-prop"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
