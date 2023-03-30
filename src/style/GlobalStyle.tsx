@@ -8,6 +8,9 @@ const globalStyleCss = css`
     height: 100%;
   }
 
+  a {
+    text-decoration: none;
+  }
   li,
   ul {
     list-style: none;
