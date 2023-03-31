@@ -8,11 +8,13 @@ const Home = () => {
   const { data } = useFetch(getProducts);
 
   return (
-    <ProductListContainer>
-      {data?.map((product) => (
-        <ProductItem key={product.id} {...product} />
-      ))}
-    </ProductListContainer>
+    <HomeContainer>
+      <ProductListContainer>
+        {data?.map((product) => (
+          <ProductItem key={product.id} {...product} />
+        ))}
+      </ProductListContainer>
+    </HomeContainer>
   );
 };
 
@@ -21,6 +23,15 @@ export default Home;
 const ProductListContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
+
   gap: 20px;
   padding: 20px;
+`;
+
+const HomeContainer = styled.main`
+  display: flex;
+  flex: 1;
+  width: 100%;
+  overflow-y: scroll;
 `;

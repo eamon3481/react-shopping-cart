@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
 
   background: #2ac1bc;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 8px;
 `;
 
 export const NavTitle = styled.h1`
