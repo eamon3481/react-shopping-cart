@@ -1,35 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProductItem from './ProductItem';
 import styled from '@emotion/styled';
+import { getProducts } from '../../api';
+import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
+  const { data } = useFetch(getProducts);
+
   return (
     <ProductListContainer>
-      <ProductItem
-        imageUrl="https://cdn-mart.baemin.com/sellergoods/main/6ae4c431-6988-41ab-8894-7df7ee7b7cb3.jpg"
-        id={1}
-        price={12000}
-        name="dsf"
-      />
-      <ProductItem
-        imageUrl="https://cdn-mart.baemin.com/sellergoods/main/6ae4c431-6988-41ab-8894-7df7ee7b7cb3.jpg"
-        id={1}
-        price={12000}
-        name="dsf"
-      />
-
-      <ProductItem
-        imageUrl="https://cdn-mart.baemin.com/sellergoods/main/6ae4c431-6988-41ab-8894-7df7ee7b7cb3.jpg"
-        id={1}
-        price={12000}
-        name="dsf"
-      />
-      <ProductItem
-        imageUrl="https://cdn-mart.baemin.com/sellergoods/main/6ae4c431-6988-41ab-8894-7df7ee7b7cb3.jpg"
-        id={1}
-        price={12000}
-        name="dsf"
-      />
+      {data?.map((product) => (
+        <ProductItem key={product.id} {...product} />
+      ))}
     </ProductListContainer>
   );
 };
