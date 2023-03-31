@@ -1,6 +1,7 @@
 export interface ProductInfo {
   name: string;
   price: number;
+  imageUrl: string;
 }
 
 export interface Product extends ProductInfo {
